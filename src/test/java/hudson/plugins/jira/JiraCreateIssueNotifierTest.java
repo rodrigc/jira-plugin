@@ -174,6 +174,7 @@ public class JiraCreateIssueNotifierTest {
         when(session.createIssue(Mockito.anyString(), Mockito.anyString(), Mockito.anyString(), Mockito.anyList(), Mockito.anyString(),
                 Mockito.anyLong(), Mockito.anyLong())).thenReturn(issue);
         when(issue.getStatus()).thenReturn(status);
+        when(issue.getKey()).thenReturn("MOCK-1");
         when(session.getIssueByKey(Mockito.anyString())).thenReturn(issue);
 
         assertEquals(0, temporaryDirectory.list().length);
