@@ -169,7 +169,7 @@ public class JiraCreateIssueNotifierTest {
         doReturn(site).when(notifier).getSiteForProject(Mockito.any());
 
         Issue issue = mock(Issue.class);
-        Status status = new Status(null, null, "", JiraCreateIssueNotifier.finishedStatuses.Closed.toString() , null, null);
+        Status status = new Status(null, null, JiraCreateIssueNotifier.finishedStatuses.Closed.toString() ,"no-description-for-status-in-performFailureSuccessIssueClosedWithComponents" , null, null);
 
         when(session.createIssue(Mockito.anyString(), Mockito.anyString(), Mockito.anyString(), Mockito.anyList(), Mockito.anyString(),
                 Mockito.anyLong(), Mockito.anyLong())).thenReturn(issue);
