@@ -281,6 +281,9 @@ public class JiraRestService {
             //builder.setAssigneeName(assignee);
             // Need to use "id" as specified here:
             //    https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/
+            //
+            // See upstream fix for setAssigneeName:
+            //    https://bitbucket.org/atlassian/jira-rest-java-client/pull-requests/104/change-field-name-from-name-to-id-for/diff 
             builder.setFieldInput(new FieldInput(IssueFieldId.ASSIGNEE_FIELD, ComplexIssueInputFieldValue.with("id", assignee)));
 	}
         if (Iterators.size(components.iterator()) > 0){
